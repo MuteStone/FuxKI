@@ -1,0 +1,11 @@
+name: CI-smoke
+on:
+  push:        # läuft bei jedem Push auf jeden Branch
+  pull_request:
+  workflow_dispatch:  # manuell startbar
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "✅ Runner lebt: $GITHUB_WORKFLOW @ $GITHUB_SHA"
