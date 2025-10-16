@@ -37,16 +37,3 @@ jobs:
 
       - name: Tests
         run: pytest
-
-      - name: Integration test /chat (optional)
-        if: ${{ secrets.OPENAI_API_KEY != '' }}
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          LLM_PROVIDER: openai
-        run: |
-          python - << 'PY'
-          import requests, json
-          payload = {"session_id":"ci","message":"Sag Hallo"}
-          r = requests.post("http://localhost:8000/chat", json=payload, timeout=10)
-          print(r.status_code, r.text)
-          PY
