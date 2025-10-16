@@ -37,3 +37,7 @@ jobs:
 
       - name: Tests
         run: pytest
+
+      - name: Echo secret existence (sanity check)
+        if: ${{ secrets.OPENAI_API_KEY != '' }}
+        run: echo "OPENAI_API_KEY is configured"
