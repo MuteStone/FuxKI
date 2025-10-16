@@ -8,4 +8,4 @@ jobs:
   smoke:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "✅ Runner lebt: $GITHUB_WORKFLOW @ $GITHUB_SHA"
+      - run: echo "Runner lebt $GITHUB_WORKFLOW @ $GITHUB_SHA"
